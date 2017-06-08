@@ -4,6 +4,12 @@
 
 $light-grey: #eaeaea;
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 #project-type-ul {
   li {
     display: inline-block;;
@@ -41,4 +47,12 @@ p {
 
 h3 {
   font-family: 'Oxygen', sans-serif;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }

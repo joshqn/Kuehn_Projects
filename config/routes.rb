@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  resources :users
+
+
 
   resources :projects
   root 'projects#index'
   get '/:type', to: 'projects#type'
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+
+  scope '/admin' do
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
+    get 'users/:id', to: 'users#show'
+  end
 
 end
