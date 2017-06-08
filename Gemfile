@@ -38,6 +38,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 #jquery for rails
 gem 'jquery-rails'
+#pagination library that integrates with RoR
+gem 'will_paginate', '3.1.5'
+# Rails engine that extends will_paginate stylings to match Bootstrap
+gem 'bootstrap-will_paginate', '1.0.0'
 
 
 
