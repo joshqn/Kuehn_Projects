@@ -1,10 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  attr_accessor :type
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @type = 'all'
+    params[:type] = @type
+    @projects = Project.first(3)
   end
 
   # GET /projects/1
@@ -59,6 +62,13 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # GET /:type
+  def type
+    @type = params[:type]
+    @projects = Project.where("projType = ?", @type == 'ios' ? 0 : 1)
+    render :index
   end
 
   private

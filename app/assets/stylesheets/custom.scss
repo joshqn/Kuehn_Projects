@@ -2,6 +2,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$light-grey: #eaeaea;
+
 #project-type-ul {
   li {
     display: inline-block;;
@@ -13,6 +15,30 @@
 }
 
 #project-type-div {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid $light-grey;
   padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.project-img {
+  border: 2px solid $light-grey;
+}
+
+.project-row {
+  padding: 16px;
+  border-bottom: 1px solid $light-grey;
+}
+
+.footer {
+  margin: 16px;
+  color: #807E81;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+}
+
+h3 {
+  font-family: 'Oxygen', sans-serif;
 }

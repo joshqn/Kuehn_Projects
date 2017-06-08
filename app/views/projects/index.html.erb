@@ -1,5 +1,14 @@
+<% @projects.each_with_index do |val, index | %>
+  <% if index % 2 == 0 %>
 
+    <%= render partial: 'leftSide_Project', locals: { val: val } %>
 
+  <% else %>
+
+    <%= render partial: 'rightSide_Project', locals: { val: val } %>
+
+  <% end %>
+<% end %>
 
 
 
