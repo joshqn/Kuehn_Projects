@@ -5,9 +5,10 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @type = 'all'
+    @type = '2'
     params[:type] = @type
     @projects = Project.paginate(page: params[:page], :per_page => 3)
+    @current_user = @current_user
   end
 
   # GET /projects/1
@@ -66,9 +67,7 @@ class ProjectsController < ApplicationController
 
   # GET /:type
   def type
-    @type = params[:type]
-    @projects = Project.where("projType = ?", @type == 'ios' ? 0 : 1).paginate(page: params[:page], :per_page => 3)
-
+    @projects = Project.where("projType = ?", params[:type]).paginate(page: params[:page], :per_page => 3)
     render :index
   end
 

@@ -56,3 +56,13 @@ h3 {
   margin-top: 45px;
   @include box_sizing;
 }
+
+//*** Login Page ***//
+
+label {
+  margin-bottom: 8px;
+}
+
+.form-control {
+  margin-bottom: 8px;
+}

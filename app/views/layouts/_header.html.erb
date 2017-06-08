@@ -20,22 +20,12 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Blog", "https://www.joshqn.com", target: :_blank %></li>
           <li><%= link_to "Hire Me", "#" %></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <% if logged_in? %>
+          <li><%= link_to "Log out", logout_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
+          <% end %>
         </ul>
       </div>
 
     </div>
   </nav>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center" id="project-type-div">
-        <ul style="display: inline-block;" class="nav nav-pills text-center movie-sel-ul" id="project-type-ul">
-          <li class="<%= 'active' if params[:type] == 'all' %>"><a href="/">All</a></li>
-          <li class="<%= 'active' if params[:type] == 'ios' %>"><a href="/ios">iOS</a></li>
-          <li class="<%= 'active' if params[:type] == 'web' %>"><a href="/web">Web</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </header>

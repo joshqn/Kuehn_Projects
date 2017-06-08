@@ -1,4 +1,18 @@
+<%= render partial: 'type_switcher' %>
+
 <% @projects.each_with_index do |val, index | %>
+
+  <% if current_user && current_user.id == 1 %>
+
+    <div class="row">
+      <div class="container">
+        <button class="btn btn-default" style="margin-top: 5px;">Edit</button>
+      </div>
+    </div>
+
+  <% end %>
+
+
   <% if index % 2 == 0 %>
 
     <%= render partial: 'leftSide_Project', locals: { val: val } %>

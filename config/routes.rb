@@ -5,13 +5,16 @@ Rails.application.routes.draw do
 
   resources :projects
   root 'projects#index'
-  get '/:type', to: 'projects#type'
+  get '/ios/:type', to: 'projects#type'
+  get '/web/:type', to: 'projects#type'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   scope '/admin' do
-    get '/login', to: 'sessions#new'
-    post '/login', to: 'sessions#create'
-    delete '/logout', to: 'sessions#destroy'
-    get 'users/:id', to: 'users#show'
+
+    get 'users/:id', to: 'users#show', as: :admin
   end
 
 end
