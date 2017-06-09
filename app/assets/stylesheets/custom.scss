@@ -4,6 +4,20 @@
 
 $light-grey: #eaeaea;
 
+/* projects */
+
+.projects {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid $light-grey;
+  }
+  .description {
+    display: block;
+  }
+}
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -66,3 +80,5 @@ label {
 .form-control {
   margin-bottom: 8px;
 }
+
+
