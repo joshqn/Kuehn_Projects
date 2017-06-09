@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
     @type = '2'
     params[:type] = @type
     @projects = Project.paginate(page: params[:page], :per_page => 3)
-    @current_user = @current_user
   end
 
   # GET /projects/1

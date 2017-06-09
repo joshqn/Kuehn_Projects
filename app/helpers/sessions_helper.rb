@@ -9,6 +9,7 @@ module SessionsHelper
   end
 
   def logged_in?
+    # Use Redis to cache this and only update when changed in sessions#create
     !current_user.nil?
   end
 
