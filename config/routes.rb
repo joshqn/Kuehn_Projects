@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   scope '/admin' do
     get 'users/:id', to: 'users#show', as: :admin
+    get 'users/:id/new', to: 'users#new', as: :admin_new
   end
 
 end

@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @projects = Project.all
   end
 
+  def new
+    @project = Project.new
+  end
+
   private
 
     def logged_in_user
