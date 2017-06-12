@@ -1,4 +1,5 @@
 <li id="project-<%= project.id %>" >
   <span class="title"><%= project.title %></span>
   <span class="description"><%= project.description %></span>
+  <%= image_tag project.projImage.url(:square) %>
 </li>

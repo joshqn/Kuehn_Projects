@@ -45,6 +45,8 @@ gem 'aws-sdk', '~> 2'
 # Load environment variables from .env
 gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
 
+gem 'paperclip'
+
 
 
 group :development, :test do
