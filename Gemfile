@@ -43,7 +43,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 # AWS SDK for Ruby
 gem 'aws-sdk', '~> 2'
 # Load environment variables from .env
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
 
 
 
