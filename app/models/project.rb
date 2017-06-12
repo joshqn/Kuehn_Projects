@@ -1,7 +1,6 @@
 class Project < ApplicationRecord
   validates :title, :description, :projType, presence: true
   validates :projType, length: { maximum: 1 }
-  attr_accessor :projImage_file_name
 
   has_attached_file :projImage, styles: {
     thumb: '100x100>',
