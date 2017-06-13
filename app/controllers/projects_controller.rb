@@ -66,7 +66,7 @@ class ProjectsController < ApplicationController
 
   # GET /:type
   def type
-    @projects = Project.where("projType = '?'").paginate(page: params[:page], :per_page => 3)
+    @projects = Project.all
     render :index
   end
 
