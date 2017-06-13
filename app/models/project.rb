@@ -11,4 +11,12 @@ class Project < ApplicationRecord
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :projImage, :content_type => /\Aimage\/.*\Z/
 
+  def self.ios_projects
+    return Project.where(:projType => 1)
+  end
+
+  def self.web_projects
+    return Project.where(:projType => 0)
+  end
+
 end

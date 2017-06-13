@@ -1,5 +1,13 @@
 <li id="project-<%= project.id %>" >
-  <span class="title"><%= project.title %></span>
-  <span class="description"><%= project.description %></span>
-  <%= image_tag project.projImage.url(:square) %>
+  <div class="row">
+    <div class="col-sm-1" >
+      <%= link_to "", project_delete_url(project.id) , method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger glyphicon glyphicon-trash button-spacing' %>
+
+      <%= link_to "", project_edit_url(project.id) , method: :get, class: 'btn btn-default glyphicon glyphicon-cog button-spacing' %>
+    </div>
+    <div class="col-sm-11">
+      <span class="title"><%= project.title %></span>
+      <span class="description"><%= project.description %></span>
+    </div>
+  </div>
 </li>

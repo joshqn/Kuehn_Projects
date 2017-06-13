@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :logged_in, only: :new
+
   def new
   end
 
@@ -17,4 +19,12 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+
+  private
+
+    def logged_in
+      if current_user
+        redirect_to admin_url(current_user)
+      end
+    end
 end

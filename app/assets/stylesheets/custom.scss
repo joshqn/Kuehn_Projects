@@ -18,6 +18,12 @@ $light-grey: #eaeaea;
   }
 }
 
+.button-spacing {
+  margin: 0 8px 8px 0;
+}
+
+/* debugging box */
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;

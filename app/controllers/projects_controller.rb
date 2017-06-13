@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :new]
   attr_accessor :type
 
   # GET /projects
@@ -31,7 +32,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to admin_url(current_user), notice: 'Project was successfully created.' }
+        format.html { redirect_to root_url }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render admin_url(current_user) }
@@ -45,7 +46,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to admin_url(current_user) }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -59,14 +60,14 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to admin_url(current_user), notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   # GET /:type
   def type
-    @projects = Project.where(:projType => params[:type].to_i).paginate(page: params[:page], :per_page => 3)
+    @projects = (params[:type] == '1' ? Project.ios_projects : Project.web_projects ).paginate(page: params[:page], :per_page => 3)
     render :index
   end
 
@@ -79,5 +80,12 @@ class ProjectsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:title, :description, :projType, :projImage, :projImage_file_name)
+    end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Admin Only"
+        redirect_to root_url
+      end
     end
 end
