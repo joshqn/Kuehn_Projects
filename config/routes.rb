@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   resources :users
 
-
+  get 'contact', to: 'static_pages#contact', as: :contact
+  post 'contact', to: 'static_pages#send_message', as: :contact_send
 
   resources :projects
   root 'projects#index'

@@ -65,7 +65,7 @@ p {
   font-size: 1.1em;
 }
 
-h3 {
+h3, h2 {
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -96,3 +96,5 @@ label {
   margin-bottom: 8px;
 }
 
+/* EMAIL STUFF */
+input, textarea {display: block;}
