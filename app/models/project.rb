@@ -1,6 +1,8 @@
 class Project < ApplicationRecord
   validates :title, :description, :projType, presence: true
   validates :projType, length: { maximum: 1 }
+  attr_accessor :full_title
+
 
   has_attached_file :projImage, styles: {
     thumb: '100x100>',
@@ -17,6 +19,11 @@ class Project < ApplicationRecord
 
   def self.web_projects
     return Project.where(:projType => 0)
+  end
+
+  def full_title
+    type = self.projType == 0 ? "iOS" : "Web"
+    return "#{self.title} | #{type}"
   end
 
 end
