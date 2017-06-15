@@ -6,8 +6,18 @@ $light-grey: #eaeaea;
 $swift: #FC9D3C;
 $ruby: #CC0000;
 
+// *** GENERAL STYLING ** //
 
-/* projects */
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+}
+
+h3, h2 {
+  font-family: 'Oxygen', sans-serif;
+}
+
+// *** projects admin page *** //
 
 .projects {
   list-style: none;
@@ -25,7 +35,7 @@ $ruby: #CC0000;
   margin: 0 8px 8px 0;
 }
 
-/* debugging box */
+// *** debugging box *** //
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -33,15 +43,13 @@ $ruby: #CC0000;
   box-sizing:         border-box;
 }
 
-#project-type-ul {
-  li {
-    display: inline-block;;
-  }
-}
+// *** NAVBAR *** //
 
 .navbar {
   margin-bottom: 8px;
 }
+
+// *** HOME PAGE *** //
 
 #project-type-div {
   border-bottom: 1px solid $light-grey;
@@ -56,20 +64,17 @@ $ruby: #CC0000;
 .project-row {
   padding: 16px;
   border-bottom: 1px solid $light-grey;
+  p {
+    font-size: 1.15em;
+  }
 }
+
+// *** FOOTER ***//
 
 .footer {
   margin: 24px;
   color: #807E81;
-}
-
-p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.1em;
-}
-
-h3, h2 {
-  font-family: 'Oxygen', sans-serif;
+  font-size: 1.0em;
 }
 
 .debug_dump {
@@ -98,9 +103,6 @@ label {
 .field {
   margin-bottom: 8px;
 }
-
-/* EMAIL STUFF */
-input, textarea {display: block;}
 
 // *** TAB PILLS *** //
 
