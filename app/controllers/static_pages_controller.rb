@@ -1,9 +1,11 @@
 class StaticPagesController < ApplicationController
 
+  # GET
   def contact
     @message = Message.new
   end
 
+  # POST
   def send_message
     @message = Message.new message_params
 
