@@ -4,7 +4,9 @@ class Project < ApplicationRecord
   attr_accessor :full_title
 
 
-  has_attached_file :projImage, styles: {
+  has_attached_file :projImage,
+  :default_url => "https://s3.us-east-2.amazonaws.com/kuehnprojects/projects/projimages/000/000/025/original/iTunesArtwork_2x.png",
+  styles: {
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>'
