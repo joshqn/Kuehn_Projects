@@ -1,6 +1,7 @@
 {
   "name": "Kuehn_Projects",
   "scripts": {
+    "postdeploy": "bin/rails db:schema:load db:seed"
   },
   "env": {
     "AWS_ACCESS_KEY_ID": {
