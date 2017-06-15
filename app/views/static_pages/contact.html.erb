@@ -1,5 +1,9 @@
 <% provide(:title, "Contact") %>
 
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name %>"><%= msg %></div>
+<% end %>
+
 <h2 class="text-center">Have questions?</h2>
 
 <p class="text-center">I'll be glad to answer them! I'm available for freelance work and consulting</p>
@@ -7,17 +11,21 @@
 <br>
 
 <%= form_for @message, url: contact_url do |f| %>
-  <%= notice %>
-  <%= @message.errors.full_messages.join(', ') %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= notice %>
+      <%= @message.errors.full_messages.join(', ') %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: "form-control" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
 
-  <%= f.label :body %>
-  <%= f.text_area :body, class: "form-control" %>
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "form-control" %>
 
-  <%= f.submit 'Send Message', class: "btn btn-primary" %>
+      <%= f.submit 'Send Message', class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>

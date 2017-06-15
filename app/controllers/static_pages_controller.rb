@@ -9,7 +9,8 @@ class StaticPagesController < ApplicationController
 
     if @message.valid?
       ContactMailer.contact_me(@message).deliver_now
-      redirect_to contact_url, notice: "Message received, thanks!"
+      flash[:success] = "Thanks #{@message.name}. We've received your message!"
+      redirect_to contact_url
     else
       render :new
     end

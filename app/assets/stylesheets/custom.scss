@@ -3,6 +3,8 @@
 @import "bootstrap";
 
 $light-grey: #eaeaea;
+$swift: #FC9D3C;
+$ruby: #CC0000;
 
 /* projects */
 
@@ -56,7 +58,7 @@ $light-grey: #eaeaea;
 }
 
 .footer {
-  margin: 16px;
+  margin: 24px;
   color: #807E81;
 }
 
@@ -98,3 +100,33 @@ label {
 
 /* EMAIL STUFF */
 input, textarea {display: block;}
+
+// *** TAB PILLS *** //
+
+.nav-pills {
+  li {
+    a {
+      transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      -moz-transition-timing-function: ease-in;
+    }
+  }
+  li.active {
+    .iosPill {
+      background-color: $swift;
+      &:hover {
+        background-color: $swift;
+      }
+    }
+    .webPill {
+      background-color: $ruby;
+      &:hover {
+        background-color: $ruby
+      }
+    }
+  }
+}
+
