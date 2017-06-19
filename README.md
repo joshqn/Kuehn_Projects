@@ -3,8 +3,8 @@ This repo is for the webiste https://www.kuehnprojects.com used to hold projects
 
 # Prequisites
 
-Rails: 5.1+
-Ruby: 2.4+
+* Rails: 5.1+
+* Ruby: 2.4+
 
 # Database
 You can seed the database to get fake data 'bin/rails db:seed'
