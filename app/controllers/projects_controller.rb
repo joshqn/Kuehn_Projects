@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
   def index
     @type = '2'
     params[:type] = @type
-    @projects = Project.paginate(page: params[:page], :per_page => 3)
+    @projects = Project.paginate(page: params[:page], :per_page => 3).order('id DESC')
   end
 
   # GET /projects/1
