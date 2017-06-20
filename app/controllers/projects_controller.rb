@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:create, :new]
+  before_action :set_project, only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :new, :show, :edit]
   attr_accessor :type
 
   # GET /projects
@@ -14,6 +14,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @user = User.find('1')
+    @projects = Project.all
   end
 
   # GET /projects/new
@@ -46,7 +48,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to admin_url(current_user) }
+        format.html { redirect_to admin_url }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -60,7 +62,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to admin_url(current_user), notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to admin_url }
       format.json { head :no_content }
     end
   end

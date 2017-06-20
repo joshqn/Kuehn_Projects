@@ -1,19 +1,12 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "Projects") %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div class="row" style="margin-bottom: 8px;">
+  <div class="container text-right">
+    <%= link_to "Add New Project", project_new_path, class: 'btn btn-primary' %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
 
-<p>
-  <strong>Projtype:</strong>
-  <%= @project.projType %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<ol class="projects">
+  <%= render @projects %>
+</ol>

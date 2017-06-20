@@ -6,4 +6,8 @@ class ProjectsTest < ApplicationSystemTestCase
   #
   #   assert_selector "h1", text: "Project"
   # end
+
+  test "visiting the index" do
+    visit projects_url
+  end
 end
