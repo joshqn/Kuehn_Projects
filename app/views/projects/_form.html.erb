@@ -27,6 +27,13 @@
 
 <div class="row">
   <div class="container">
+    <%= form.label :proj_link, "Project Link" %>
+    <%= form.url_field :proj_link, id: :project_proj_link, class: 'form-control' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container">
     <%= label :projType, "Project Type" %>
     <ol class="rbs">
       <li>

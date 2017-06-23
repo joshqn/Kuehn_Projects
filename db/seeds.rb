@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 3.times do |i|
-  Project.create([{title: Faker::Book.title, description: Faker::Lorem.paragraphs, projType: 1},
-                {title: Faker::Book.title, description: Faker::Lorem.paragraphs, projType: 0}])
+  Project.create([{title: Faker::Book.title, description: Faker::Lorem.paragraphs, projType: 1, proj_link: "www.google.com"},
+                {title: Faker::Book.title, description: Faker::Lorem.paragraphs, projType: 0, proj_link: nil}])
 end
 
 User.create(name: "John Smith", email: "admin@admin.com", password: "password")
