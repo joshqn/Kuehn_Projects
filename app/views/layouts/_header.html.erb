@@ -20,7 +20,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Admin Page", admin_path(current_user) %></li>
+          <li><%= link_to "Admin Page", admin_path %></li>
           <li><%= link_to "Log out", logout_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
           <% else %>
           <li><%= link_to "Blog", "https://www.joshqn.com", target: :_blank %></li>
