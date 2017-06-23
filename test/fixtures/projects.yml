@@ -4,8 +4,10 @@ one:
   title: MyString
   description: MyText
   projType: 1
+  proj_link: www.google.com
 
 two:
   title: MyString
   description: MyText
   projType: 1
+  proj_link: nil

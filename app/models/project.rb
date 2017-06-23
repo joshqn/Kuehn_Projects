@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   validates :title, :description, :projType, presence: true
   validates :projType, length: { maximum: 1 }
+  before_save :nil_if_blank, :check_for_proper_uri
   attr_accessor :full_title
 
 
@@ -27,5 +28,19 @@ class Project < ApplicationRecord
     type = self.projType == 0 ? "iOS" : "Web"
     return "#{self.title} | #{type}"
   end
+
+  private
+
+    def nil_if_blank
+      if self.proj_link.blank?
+        self.proj_link = nil
+      end
+    end
+
+    def check_for_proper_uri
+      if self.proj_link != nil && URI.parse(self.proj_link).scheme == nil
+        self.proj_link = "http://" + self.proj_link
+      end
+    end
 
 end

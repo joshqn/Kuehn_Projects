@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612031754) do
+ActiveRecord::Schema.define(version: 20170623011827) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170612031754) do
     t.string "projImage_content_type"
     t.integer "projImage_file_size"
     t.datetime "projImage_updated_at"
+    t.string "proj_link"
   end
 
   create_table "users", force: :cascade do |t|
