@@ -5,6 +5,7 @@
 $light-grey: #eaeaea;
 $swift: #FC9D3C;
 $ruby: #CC0000;
+$web: #4183D7;
 
 // *** GENERAL STYLING ** //
 
@@ -69,6 +70,11 @@ h3, h2 {
   }
 }
 
+.brandName {
+  font-size: 2.0em;
+  font-family: 'Montserrat', sans-serif;
+}
+
 // *** FOOTER ***//
 
 .footer {
@@ -106,30 +112,66 @@ label {
 
 // *** TAB PILLS *** //
 
-.nav-pills {
+.nav-switchers {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   li {
+    float: left;
+    margin-right: 8px;
+    margin-left: 8px;
     a {
+      font-family: 'Oxygen', sans-serif;
+      border-bottom: 2px solid #fff;
+      padding: 4px 8px;
+      font-size: 1.5em;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: #6C7A89;
+
       transition-duration: 0.2s;
       -webkit-transition-duration: 0.2s;
       -moz-transition-duration: 0.2s;
       transition-timing-function: ease-in;
       -webkit-transition-timing-function: ease-in;
       -moz-transition-timing-function: ease-in;
+
+      &:hover {
+        color: $web;
+        border-bottom: 2px solid $web;
+      }
+    }
+    .iosPill {
+      &:hover {
+        border-bottom: 2px solid $swift;
+        color: $swift;
+      }
+    }
+
+    .webPill {
+      &:hover {
+        border-bottom: 2px solid $ruby;
+        color: $ruby;
+      }
     }
   }
+
   li.active {
+    a {
+      color: $web;
+      border-bottom: 2px solid $web;
+    }
     .iosPill {
-      background-color: $swift;
-      &:hover {
-        background-color: $swift;
-      }
+      color: $swift;
+      border-bottom: 2px solid $swift;
     }
     .webPill {
-      background-color: $ruby;
-      &:hover {
-        background-color: $ruby
-      }
+      color: $ruby;
+      border-bottom: 2px solid $ruby;
     }
   }
+
 }
 
