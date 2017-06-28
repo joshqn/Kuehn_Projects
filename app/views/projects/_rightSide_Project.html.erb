@@ -1,6 +1,6 @@
 <div class="row project-row">
   <div class="col-sm-12 col-md-4 col-md-push-8">
-    <%= image_tag val.projImage.url, class: "img-responsive img-rounded project-img" %>
+    <%= image_tag val.projImage.url(:medium), class: "img-responsive img-rounded project-img center-block" %>
   </div>
   <div class="col-sm-12 col-md-8 col-md-pull-4">
     <h3><%= link_to_unless(val.proj_link.nil?, val.full_title, val.proj_link, target: "_target")%></h3>
