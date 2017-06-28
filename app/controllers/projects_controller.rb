@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
 
   # GET /:type
   def type
-    @projects = (params[:type] == '1' ? Project.ios_projects : Project.web_projects ).paginate(page: params[:page], :per_page => 3)
+    @projects = (params[:type] == '1' ? Project.ios_projects : Project.web_projects ).paginate(page: params[:page], :per_page => 3).order('id DESC')
     render :index
   end
 
