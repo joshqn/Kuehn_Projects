@@ -47,6 +47,9 @@ gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
 
 gem 'paperclip'
 
+# Detailed Rails application performance analysis
+gem 'scout_apm'
+
   # Fake data generator
   gem 'faker'
 
