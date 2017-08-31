@@ -1,4 +1,9 @@
 <% provide(:title, "Forgot password") %>
+
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name %>"><%= msg %></div>
+<% end %>
+
 <h1>Forgot password</h1>
 
 <div class="row">
