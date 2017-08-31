@@ -12,9 +12,10 @@
       <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, id: "passwordField", class: 'form-control' %>
+      <%= link_to "Forgot your password?", "#", id: "forgotPass" %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Log in", class: "btn btn-primary submit-button" %>
     <% end %>
 
   </div>
