@@ -6,6 +6,7 @@
     <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
       <%= render 'layouts/error_messages' %>
 
+      <!-- Provide email in a hidden field or it will disappear -->
       <%= hidden_field_tag :email, @user.email %>
 
       <%= f.label :password %>
