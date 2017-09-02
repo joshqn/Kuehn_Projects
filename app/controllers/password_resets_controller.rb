@@ -25,7 +25,6 @@ class PasswordResetsController < ApplicationController
   def update
     if params[:user][:password].empty?
       @user.errors.add(:password, "can't be empty")
-      puts "empty"
       render 'edit'
     elsif @user.update_attributes(user_params)
       log_in @user
@@ -47,8 +46,9 @@ class PasswordResetsController < ApplicationController
       @user = User.find_by(email: params[:email])
     end
 
+    # If token is wrong or nil then a redirect will occur
     def valid_user
-      unless (@user)
+      unless (@user && @user.authenticated?(:reset, params[:id]))
         redirect_to root_url
       end
     end
