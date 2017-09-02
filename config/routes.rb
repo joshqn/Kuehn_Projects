@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     get '/projects/:id/edit', to: 'projects#edit', as: :project_edit
   end
 
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
 end
