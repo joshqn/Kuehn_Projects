@@ -7,6 +7,14 @@ $swift: #FC9D3C;
 $ruby: #CC0000;
 $web: #4183D7;
 
+// *** GENERAL *** //
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #5E5E5E;
+}
+
 // *** CONTACT PAGE *** //
 
 .sendButton {
@@ -116,6 +124,16 @@ label {
   margin-bottom: 8px;
 }
 
+#passwordField {
+  margin-bottom: 2px;
+}
+
+#forgotPass {
+  margin-bottom: 16px;
+  display: block;
+}
+
+
 // *** TAB PILLS *** //
 
 .nav-switchers {
@@ -180,4 +198,21 @@ label {
   }
 
 }
+
+// *** forms *** //
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
 
