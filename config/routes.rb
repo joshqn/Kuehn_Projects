@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     post '/new', to: 'projects#create'
     delete '/projects/:id', to: 'projects#destroy', as: :project_delete
     get '/projects/:id/edit', to: 'projects#edit', as: :project_edit
-    put '/forgot_password', to: 'password_resets#forget_password_rest', as: :forget_password_reset
+    put '/forgot_password', to: 'password_resets#forget_password_reset', as: :forget_password_reset
   end
 
   resources :password_resets, only: [:new, :create, :edit, :update]
