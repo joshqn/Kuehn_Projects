@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @user = current_user
-    @projects = Project.all
+    @projects = Project.all.order("id DESC")
   end
 
   # GET /projects/new
