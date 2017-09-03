@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @user = User.find('1')
+    @user = current_user
     @projects = Project.all
   end
 

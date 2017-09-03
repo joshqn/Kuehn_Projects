@@ -27,6 +27,11 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
+  def forget_password_reset
+    update_attribute(:reset_digest, nil)
+    update_attribute(:reset_sent_at, nil)
+  end
+
   # Sets the password reset attributes.
   def create_reset_digest
     self.reset_token = User.new_token
