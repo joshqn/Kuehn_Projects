@@ -37,7 +37,7 @@ class PasswordResetsController < ApplicationController
     end
   end
 
-  def forget_password_rest
+  def forget_password_reset
     @user = current_user
     if @user.reset_digest != nil
       @user.forget_password_reset
