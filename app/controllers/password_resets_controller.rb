@@ -40,7 +40,7 @@ class PasswordResetsController < ApplicationController
   def forget_password_rest
     @user = current_user
     if @user.reset_digest != nil
-      @user.forgot_password_rest
+      @user.forget_password_reset
       redirect_to admin_path
     end
   end

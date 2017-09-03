@@ -27,7 +27,7 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
-  def forgot_password_rest
+  def forget_password_reset
     update_attribute(:reset_digest, nil)
     update_attribute(:reset_sent_at, nil)
   end
