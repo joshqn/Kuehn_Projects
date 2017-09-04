@@ -1,6 +1,12 @@
 <div class="row project-row">
   <div class="col-sm-12 col-md-4 col-md-push-8 image-container">
-    <%= image_tag val.projImage.url, class: "img-responsive img-rounded project-img center-block" %>
+
+    <% if !val.proj_link.nil? %>
+      <%= link_to (image_tag val.projImage.url, class: "img-responsive img-rounded project-img center-block"), val.proj_link, target: "_blank"  %>
+    <% else %>
+      <%= image_tag val.projImage.url, class: "img-responsive img-rounded project-img center-block" %>
+    <% end %>
+
   </div>
   <div class="col-sm-12 col-md-8 col-md-pull-4">
     <h3><%= link_to_unless(val.proj_link.nil?, val.full_title, val.proj_link, target: "_target")%></h3>
