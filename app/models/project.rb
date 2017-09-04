@@ -6,7 +6,7 @@ class Project < ApplicationRecord
 
 
   has_attached_file :projImage,
-  :default_url => "https://s3.us-east-2.amazonaws.com/kuehnprojects/projects/projimages/000/000/025/medium/iTunesArtwork_2x.png",
+  :default_url => "https://s3.us-east-2.amazonaws.com/kuehnprojects/projects/projimages/000/000/025/original/iTunesArtwork_2x.png",
   styles: {
     thumb: '100x100>',
     square: '200x200#',

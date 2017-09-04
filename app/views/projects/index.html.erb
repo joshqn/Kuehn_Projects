@@ -20,3 +20,25 @@
 <% end %>
 
 <%= will_paginate %>
+
+<script>
+  $(document).ready(function() {
+
+    // Used to fade in imgs on the first load
+    $(".image-container").each(function() {
+
+      var image = $(this).find("img");
+      if(!image.prop('complete')) {
+        $(image).addClass("load-project-img");
+
+        $(image).on('load', function() {
+          $(image).fadeIn('slow');
+        });
+      } else {
+        // Handle case where img is already loaded
+      }
+
+    });
+
+  })
+</script>
