@@ -222,12 +222,12 @@ label {
 .hovereffect {
 width:100%;
 height:100%;
-float:left;
 overflow:hidden;
 position:relative;
 text-align:center;
 cursor:default;
 border-radius: 8px;
+display: block;
 }
 
 .hovereffect .overlay {
@@ -240,7 +240,7 @@ left:0;
 opacity:0;
 background-color:rgba(0,0,0,0.5);
 -webkit-transition:all .4s ease-in-out;
-transition:all .4s ease-in-out
+transition:all .4s ease-in-out;
 }
 
 .hovereffect img {

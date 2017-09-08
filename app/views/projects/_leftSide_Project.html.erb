@@ -7,7 +7,7 @@
           <%= image_tag val.projImage.url, class: "img-responsive img-rounded project-img center-block" %>
           <div class="overlay">
             <!-- <h2>Click Me!</h2> -->
-            <a class="info" href="#"><span class="glyphicon glyphicon-link" style="verical-align:middle;"></span></a>
+            <%= link_to ("<span class='glyphicon glyphicon-link'></span>".html_safe), val.proj_link, class: "info", target: "_blank" %>
           </div>
         </div>
       <% else %>
