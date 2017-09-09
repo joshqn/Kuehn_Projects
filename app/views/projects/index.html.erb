@@ -29,7 +29,6 @@
 
       var image = $(this).find("img");
       var fadeInObject = ($(this).find(".hovereffect").length == 1) ? $(this).find(".hovereffect") : image;
-      console.log(fadeInObject);
       if(!image.prop('complete')) {
         $(fadeInObject).css('display','none');
         $(image).on('load', function() {
