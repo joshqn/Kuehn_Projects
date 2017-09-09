@@ -28,11 +28,12 @@
     $(".image-container").each(function() {
 
       var image = $(this).find("img");
+      var fadeInObject = ($(this).find(".hovereffect").length == 1) ? $(this).find(".hovereffect") : image;
+      console.log(fadeInObject);
       if(!image.prop('complete')) {
-        $(image).addClass("load-project-img");
-
+        $(fadeInObject).css('display','none');
         $(image).on('load', function() {
-          $(image).fadeIn('slow');
+          $(fadeInObject).fadeIn('slow');
         });
       } else {
         // Handle case where img is already loaded
