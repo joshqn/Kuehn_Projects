@@ -8,15 +8,29 @@
 
 <% @projects.each_with_index do |val, index | %>
 
-  <% if index % 2 == 0 %>
+  <div class="row project-row">
+    <div class="<%= index % 2 == 0 ? 'col-md-4' : 'col-sm-12 col-md-4 col-md-push-8' %>  image-container">
 
-    <%= render partial: 'leftSide_Project', locals: { val: val } %>
+      <% if !val.proj_link.nil? %>
 
-  <% else %>
+        <div class="hovereffect">
+          <%= image_tag val.projImage.url, class: "img-responsive img-rounded project-img center-block" %>
+          <div class="overlay">
+            <!-- <h2>Click Me!</h2> -->
+            <%= link_to ("<span class='glyphicon glyphicon-link'></span>".html_safe), val.proj_link, class: "info", target: "_blank" %>
+          </div>
+        </div>
+      <% else %>
+        <%= image_tag val.projImage.url, class: "img-responsive img-rounded project-img center-block" %>
+      <% end %>
 
-    <%= render partial: 'rightSide_Project', locals: { val: val } %>
+    </div>
+    <div class="<%= index % 2 == 0 ? 'col-md-8' : 'col-sm-12 col-md-8 col-md-pull-4' %>">
+      <h3><%= link_to_unless(val.proj_link.nil?, val.full_title, val.proj_link, target: "_target")%></h3>
+      <p class="well"><%= val.description %></p>
+    </div>
+  </div>
 
-  <% end %>
 <% end %>
 
 <%= will_paginate %>
